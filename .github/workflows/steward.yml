@@ -1,0 +1,31 @@
+
+name: DIY Steward
+
+on:
+  schedule:
+    - cron: '0 */4 * * *'
+  workflow_dispatch:
+
+jobs:
+  steward:
+    runs-on: ubuntu-latest
+    name: DIY Steward
+    steps:
+      - uses: actions/checkout@v3
+          
+      - name: Generate token
+        id: generate-token
+        uses: tibdex/github-app-token@v1
+        with:
+          app_id: 207529
+          private_key: ${{ secrets.APP_PRIVATE_KEY }}
+
+      - name: Launch Scala Steward
+        uses: scala-steward-org/scala-steward-action@v2
+        with:
+          github-token: ${{ steps.generate-token.outputs.token }}
+          github-repository: typelevel/vault
+          author-email: 207529+http4s-temp-steward[bot]@users.noreply.github.com
+          author-name: http4s-temp-steward[bot]
+          github-app-id: 123465
+          github-app-key: ${{ secrets.APP_PRIVATE_KEY }}
