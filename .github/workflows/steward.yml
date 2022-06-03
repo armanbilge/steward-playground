@@ -27,5 +27,3 @@ jobs:
           github-repository: http4s/tomcat
           author-email: 207529+http4s-temp-steward[bot]@users.noreply.github.com
           author-name: http4s-temp-steward[bot]
-          github-app-id: 123465
-          github-app-key: ${{ secrets.APP_PRIVATE_KEY }}
