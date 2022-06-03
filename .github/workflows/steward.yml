@@ -24,7 +24,7 @@ jobs:
         uses: scala-steward-org/scala-steward-action@v2
         with:
           github-token: ${{ steps.generate-token.outputs.token }}
-          github-repository: typelevel/vault
+          github-repository: http4s/tomcat
           author-email: 207529+http4s-temp-steward[bot]@users.noreply.github.com
           author-name: http4s-temp-steward[bot]
           github-app-id: 123465
